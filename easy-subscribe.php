@@ -23,36 +23,11 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-?>
 
-<?php
-
-defined('ABSPATH') or die("No script kiddies please!");
+require 'easy-subscribe-activate-deactivate.php';
+require 'easy-subscribe-widget.php';
 
 
-register_activation_hook(__FILE__, 'easySubscribeInstall');
+//plugin_dir_path(__FILE__); //Local path to the plugin
 
-function easySubscribeInstall() {
-
-  global $wpdb;
-
-  $data = array (
-    'option_name' => 'easy_subscribe_emails'
-  );
-
-
-  $success = $wpdb->insert('wp_options', $data);
-
-  if($success) {
-    echo 'Row successfully creates';
-  }
-  else {
-    wp_die('Something went Terribly wrong here');
-  }
-
-}
-
-
-plugin_dir_path(__FILE__); //Local path to the plugin
-
-sanitize_email($email); //Sanitizing the email address
+//sanitize_email($email); //Sanitizing the email address
