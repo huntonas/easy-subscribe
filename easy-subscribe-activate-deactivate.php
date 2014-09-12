@@ -1,8 +1,5 @@
 <?php
 
-defined('ABSPATH') or die("No script kiddies please!");
-
-
 register_activation_hook(__FILE__, 'easySubscribeActivate');
 register_deactivation_hook(__FILE__, 'easySubscribeDeactivate');
 
