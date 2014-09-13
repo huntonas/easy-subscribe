@@ -9,16 +9,16 @@ class Easy_Subscribe_Widget extends WP_Widget {
   }
 
   function widget( $args, $instance ) {
-		// Widget output
-	}
+  // Widget output
+  }
 
-	function update( $new_instance, $old_instance ) {
-		// Save widget options
-	}
+  function update( $new_instance, $old_instance ) {
+  // Save widget options
+  }
 
-	function form( $instance ) {
-		// Output admin widget options form
-	}
+  function form( $instance ) {
+  // Output admin widget options form
+  }
 
 }
 
