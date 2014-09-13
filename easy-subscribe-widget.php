@@ -5,7 +5,9 @@
 class Easy_Subscribe_Widget extends WP_Widget {
 
   function Easy_Subscribe_Widget() {
+
     parent::__construct(false, 'Easy Subscribe');
+
   }
 
   public function widget( $args, $instance ) {
@@ -20,6 +22,11 @@ class Easy_Subscribe_Widget extends WP_Widget {
     else {
       echo 'Subscribe';
     }
+    ?>
+    <input class="easy-subscribe-widget" id="easy-subscribe-widget" type="text" /><br>
+    <input type="button" onclick="alert('This was clicked');" value="Submit" />
+    <?php
+
   }
 
   public function update( $new_instance, $old_instance ) {
