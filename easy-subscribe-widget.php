@@ -8,18 +8,31 @@ class Easy_Subscribe_Widget extends WP_Widget {
     parent::__construct(false, 'Easy Subscribe');
   }
 
-  function widget( $args, $instance ) {
-  // Widget output
+  public function widget( $args, $instance ) {
+    // Widget output
+    echo 'Easy Subscribe';
   }
 
-  function update( $new_instance, $old_instance ) {
+  public function update( $new_instance, $old_instance ) {
   // Save widget options
   }
 
-  function form( $instance ) {
+  public function form( $instance ) {
   // Output admin widget options form
+    if ( isset( $instance[ 'title' ] ) ) {
+      $title = $instance[ 'title' ];
+    }
+    else {
+      $title = __( 'Subscribe', 'wpb_widget_domain' );
+    }
+    	// Widget admin form
+    ?>
+      <p>
+      <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+      </p>
+    <?php
   }
-
 }
 
 function easy_subscribe_register_widget() {
