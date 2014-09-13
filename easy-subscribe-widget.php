@@ -10,11 +10,26 @@ class Easy_Subscribe_Widget extends WP_Widget {
 
   public function widget( $args, $instance ) {
     // Widget output
-    echo 'Easy Subscribe';
+
+    //Get title if set
+    $title = apply_filters('Easy_Subscribe_Widget', $instance['title']);
+
+    if(!empty($title)) {
+      echo $title;
+    }
+    else {
+      echo 'Subscribe';
+    }
   }
 
   public function update( $new_instance, $old_instance ) {
-  // Save widget options
+    // Save widget options
+    $instance = array();
+
+    $instance['title'] = (!empty($new_instance['title'])) ? strip_tags( $new_instance['title'] ) : '';
+
+    return $instance;
+
   }
 
   public function form( $instance ) {
