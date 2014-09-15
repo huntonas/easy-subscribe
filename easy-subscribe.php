@@ -27,8 +27,3 @@ defined('ABSPATH') or die("No script kiddies please!");
 
 require 'easy-subscribe-activate-deactivate.php';
 require 'easy-subscribe-widget.php';
-
-
-//plugin_dir_path(__FILE__); //Local path to the plugin
-
-//sanitize_email($email); //Sanitizing the email address
